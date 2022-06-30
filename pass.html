@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password</title>
+</head>
+<body>
+    
+    <h1 style="color: rgb(245, 19, 19);">Radom Password</h1>
+
+    <button onclick="PG()">Generate Password</button>
+    <br/>
+    <div>
+        <p id="xyz"></p>
+    </div>
+
+    <script>
+        var xyz = document.getElementById("xyz");
+        function password(){
+            var pass = '';
+            var str = 'QWERTYUIOPLKJHGFDSAZXCVBNM'+'qwertyuioplakksjdhfgmznxbcv1234567890@#$%!*&';
+
+            for(let i =0 ; i<10; i++){
+                let char = Math.floor(Math.random()*str.length+1)
+                pass += str.charAt(char);
+            }
+            return pass;
+        }
+
+        function PG(){
+            xyz.innerHTML=password();
+        }
+
+    </script>
+</body>
+</html>
